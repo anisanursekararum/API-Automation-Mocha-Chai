@@ -1,0 +1,4 @@
+{
+  "baseURL" : "https://kasir-api.belajarqa.com",
+  "header" : "application/json"
+}

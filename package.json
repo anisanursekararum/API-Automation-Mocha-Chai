@@ -1,0 +1,20 @@
+{
+  "name": "mqa_dot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./tests/scenarios/*.js --timeout 5000",
+    "auth": "mocha ./tests/scenarios/login.spec.js --timeout 5000",
+    "user": "mocha ./tests/scenarios/user.spec.js --timeout 5000"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "chai-http": "^4.4.0",
+    "chai-json-schema": "^1.5.1",
+    "mocha": "^10.2.0"
+  }
+}
