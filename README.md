@@ -2,8 +2,37 @@
 
 preparation
 
-installation 
-#npm install --save-dev mocha
-#npm install chai --save-dev 
-#npm install chai-json-schema --save-dev 
-#npm install chai-http --save-dev 
+```sh
+npm init
+npm install
+```
+
+installation
+
+```sh
+npm install --save-dev mocha
+npm install chai --save-dev
+npm install chai-json-schema --save-dev
+npm install chai-http --save-dev
+```
+
+Run All Scenarios
+
+```sh
+npm run test 
+```
+
+Run Auth Scenarios
+
+```sh
+npm run auth
+```
+
+Run User Scenarios
+
+```sh
+npm run user
+```
+
+Postman collections : https://drive.google.com/file/d/1b9yVDQLHAkDo026fLOiy2N_G23ygi8Fq/view?usp=sharing
+Postman environtment : https://drive.google.com/file/d/1FlcNQXc1HI810tTB7Iru18GDkZoCZemj/view?usp=sharing
