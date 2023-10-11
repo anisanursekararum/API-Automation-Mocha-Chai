@@ -1,7 +1,7 @@
 const login = [
   {
     case: {
-      title: 'success',
+      title: 'success login',
       status: 201,
       message: "Authentication berhasil ditambahkan"
     },
@@ -12,7 +12,7 @@ const login = [
   },
   {
     case: {
-      title: 'failed password empty',
+      title: 'failed login password empty',
       status: 400,
       message: "\"password\" is not allowed to be empty"
     },
@@ -23,7 +23,7 @@ const login = [
   },
   {
     case: {
-      title: 'failed email empty',
+      title: 'failed login email empty',
       status: 400,
       message: "\"email\" is not allowed to be empty"
     },
@@ -34,7 +34,7 @@ const login = [
   },
   {
     case: {
-      title: 'failed email invalid',
+      title: 'failed login email invalid',
       status: 400,
       message: "\"email\" must be a valid email"
     },
@@ -45,7 +45,7 @@ const login = [
   },
   {
     case: {
-      title: 'failed password invalid',
+      title: 'failed login password invalid',
       status: 401,
       message: "Kredensial yang Anda berikan salah"
     },
@@ -56,7 +56,7 @@ const login = [
   },
   {
     case: {
-      title: 'failed invalid credential',
+      title: 'failed login invalid credential',
       status: 401,
       message: "Kredensial yang Anda berikan salah"
     },

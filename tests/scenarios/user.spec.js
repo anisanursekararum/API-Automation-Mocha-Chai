@@ -2,6 +2,7 @@ const chai = require("chai");
 const { describe, it } = require("mocha");
 const user = require("../apis/user.api");
 const auth = require("../apis/auth.api");
+const data = require('../../data/datas.json');
 const chaiSchema = require('chai-json-schema');
 const expect = require('chai').expect
 chai.use(chaiSchema)
@@ -13,8 +14,8 @@ describe('User', () => {
 	
 	before(async () => {
 		const response = await new auth().login({
-			"email": "1691246243-toko5@gmail.com",
-			"password": "password"
+			"email": data.email,
+			"password": data.password
 		})
 		token = response.body.data.accessToken
 	})

@@ -1,7 +1,21 @@
+let uniqueSeed = Date.now().toString()
+
 const registration = [
   {
     case: {
-      title: 'name empty',
+      title: 'success register',
+      status: 201,
+      message: "Toko berhasil didaftarkan"
+    },
+    payload: {
+      "name": "user"+uniqueSeed,
+      "email": uniqueSeed+"user@gmail.com",
+      "password": "password"
+    },
+  },
+  {
+    case: {
+      title: 'failed register name empty',
       status: 400,
       message: "\"name\" is not allowed to be empty"
     },
@@ -13,7 +27,7 @@ const registration = [
   },
   {
     case: {
-      title: 'email empty',
+      title: 'failed register email empty',
       status: 400,
       message: "\"email\" is not allowed to be empty"
     },
@@ -25,7 +39,7 @@ const registration = [
   },
   {
     case: {
-      title: 'password empty',
+      title: 'failed register password empty',
       status: 400,
       message: "\"password\" is not allowed to be empty"
     },
@@ -37,7 +51,7 @@ const registration = [
   },
   {
     case: {
-      title: 'unknown parameter',
+      title: 'failed register unknown parameter',
       status: 400,
       message: "\"id\" is not allowed"
     },
@@ -50,7 +64,7 @@ const registration = [
   },
   {
     case: {
-      title: 'name parameter is not sent',
+      title: 'failed register name parameter is not sent',
       status: 400,
       message: "\"name\" is required"
     },
@@ -61,7 +75,7 @@ const registration = [
   },
   {
     case: {
-      title: 'email parameter is not sent',
+      title: 'failed register email parameter is not sent',
       status: 400,
       message: "\"email\" is required"
     },
@@ -72,7 +86,7 @@ const registration = [
   },
   {
     case: {
-      title: 'password parameter is not sent',
+      title: 'failed register password parameter is not sent',
       status: 400,
       message: "\"password\" is required"
     },

@@ -1,4 +1,6 @@
 {
   "baseURL" : "https://kasir-api.belajarqa.com",
-  "header" : "application/json"
+  "header" : "application/json",
+  "email": "1691246243-toko5@gmail.com",
+  "password": "password"
 }
