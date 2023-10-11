@@ -2,7 +2,7 @@ const chai = require("chai");
 const chaiHttp = require("chai-http");
 const { describe, it } = require("mocha");
 const auth = require("../apis/auth.api");
-const { login } = require("../../data/auth.data");
+const { login } = require("../../data/login.data");
 const expect = require('chai').expect
 chai.use(chaiHttp)
 
