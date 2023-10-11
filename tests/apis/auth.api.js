@@ -12,7 +12,7 @@ class auth {
   async registration(payload) {
     const response = await chai.request(this.host)
     .post('/registration')
-    .send(payload)
+    .send(payload)                       
     .set('Content-Type', this.header)
     .set('Accept', this.header)
     return response
