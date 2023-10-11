@@ -27,6 +27,23 @@ class user {
     .set('Accept', this.header)
     return response
   }
+
+  async updateUser(token, userId, payload) {
+    const response = await chai.request(this.host)
+    .put('/users/'+userId)
+    .set('Authorization', 'Bearer ' + token)
+    .set('Content-Type', this.header)
+    .set('Accept', this.header)
+    .send(payload)
+    return response
+  }
+
+  async deleteUser(token, userId) {
+    const response = await chai.request(this.host)
+    .delete('/users/'+userId)
+    .set('Authorization', 'Bearer ' + token)
+    return response
+  }
   
 
 }

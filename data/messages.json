@@ -1,0 +1,6 @@
+{
+  "successAddUser" : "User berhasil ditambahkan",
+  "success" : "success",
+  "successUpdateUser": "User berhasil diupdate",
+  "successDeleteUser": "User berhasil dihapus"
+}

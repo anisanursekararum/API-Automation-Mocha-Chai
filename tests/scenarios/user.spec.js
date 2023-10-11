@@ -3,6 +3,7 @@ const { describe, it } = require("mocha");
 const user = require("../apis/user.api");
 const auth = require("../apis/auth.api");
 const data = require('../../data/datas.json');
+const message = require('../../data/messages.json');
 const chaiSchema = require('chai-json-schema');
 const expect = require('chai').expect
 chai.use(chaiSchema)
@@ -29,7 +30,8 @@ describe('User', () => {
 			})
 			userId = response.body.data.userId
 			expect(response.statusCode).to.be.equal(201);
-			// expect(response.body.data).to.haveOwnProperty('accessToken');
+			expect(response.body.status).to.be.equal(message.success);
+			expect(response.body.message).to.be.equal(message.successAddUser);
 		})
 		
 	it('get detail user', async () => {
@@ -97,5 +99,24 @@ describe('User', () => {
 						}
 			}
 		})
+	})
+
+	it('update user', async () => {
+		const response = await new user().updateUser(token, userId, 
+			{
+				"name" : data.nameUpdate, 
+				"email": uniqueSeed+"userUpdate@gmail.com",
+			})
+			expect(response.statusCode).to.be.equal(200);
+			expect(response.body.status).to.be.equal(message.success);
+			expect(response.body.message).to.be.equal(message.successUpdateUser);
+			expect(response.body.data.name).to.be.equal(data.nameUpdate);
+	})
+
+	it('delete user', async () => {
+		const response = await new user().deleteUser(token, userId)
+			expect(response.statusCode).to.be.equal(200);
+			expect(response.body.status).to.be.equal(message.success);
+			expect(response.body.message).to.be.equal(message.successDeleteUser);
 	})
 })
