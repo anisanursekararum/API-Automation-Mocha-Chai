@@ -3,5 +3,9 @@
   "header" : "application/json",
   "email": "1691246243-toko5@gmail.com",
   "password": "password",
-  "nameUpdate" : "New Name"
+  "nameUpdate" : "New Name",
+  "unitName" : "Sepatu",
+  "unitDesc" : "Reebok 38,5",
+  "unitUpdate" : "Sepatu Sandal Update",
+  "unitDescUpdate" : "Desktipsi produk ini telah diupdate"
 }
