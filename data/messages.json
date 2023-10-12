@@ -3,5 +3,6 @@
   "success" : "success",
   "successUpdateUser": "User berhasil diupdate",
   "successDeleteUser": "User berhasil dihapus",
-  "successAddUnit": "Unit berhasil ditambahkan"
+  "successAddUnit": "Unit berhasil ditambahkan",
+  "successAddCategorie" : "Category berhasil ditambahkan"
 }
