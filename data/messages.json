@@ -1,11 +1,11 @@
 {
-  "success" : "success",
-  "successAddUser" : "User berhasil ditambahkan",
+  "success": "success",
+  "successAddUser": "User berhasil ditambahkan",
   "successUpdateUser": "User berhasil diupdate",
   "successDeleteUser": "User berhasil dihapus",
   "successAddUnit": "Unit berhasil ditambahkan",
-  "successAddCategory" : "Category berhasil ditambahkan",
-  "successAddCustomer" : "Customer berhasil ditambahkan",
+  "successAddCategory": "Category berhasil ditambahkan",
+  "successAddCustomer": "Customer berhasil ditambahkan",
   "successAddProduct": "Product berhasil ditambahkan",
   "successUpdateProduct": "Product berhasil diupdate",
   "successDeleteProduct": "Product berhasil dihapus"

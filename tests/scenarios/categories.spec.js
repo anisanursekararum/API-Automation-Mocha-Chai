@@ -37,9 +37,7 @@ describe("TS Categories", () => {
     expect(response.statusCode).to.be.equal(200);
     expect(response.body.status).to.be.equal(message.success);
     expect(response.body.data.category.name).to.be.equal(data.categoryName);
-    expect(response.body.data.category.description).to.be.equal(
-      data.categoryDesc
-    );
+    expect(response.body.data.category.description).to.be.equal(data.categoryDesc);
     expect(response.body).to.be.jsonSchema({
       $schema: "http://json-schema.org/draft-06/schema#",
       $ref: "#/definitions/Welcome1",
@@ -88,9 +86,7 @@ describe("TS Categories", () => {
   });
 
   it("TC update category", async () => {
-    const response = await new categories().updateCategories(
-      token,
-      categoryId,
+    const response = await new categories().updateCategories(token, categoryId,
       {
         name: data.categoryUpdate,
         description: data.categoryDesc,

@@ -46,9 +46,7 @@ describe("TS Products", () => {
     expect(response.body.status).to.be.equal(message.success);
     expect(response.body.data.product.name).to.be.equal(data.productName);
     expect(price).to.be.equal(data.productPrice);
-    expect(response.body.data.product.category_id).to.be.equal(
-      data.productCategoryID
-    );
+    expect(response.body.data.product.category_id).to.be.equal(data.productCategoryID);
     expect(cost).to.be.equal(data.productCost);
     expect(stock).to.be.equal(data.productStock);
     expect(response.body).to.be.jsonSchema({

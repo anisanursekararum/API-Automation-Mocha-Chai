@@ -40,12 +40,8 @@ describe("TS Customers", () => {
     expect(response.body.status).to.be.equal(message.success);
     expect(response.body.data.customer.name).to.be.equal(data.customerName);
     expect(response.body.data.customer.phone).to.be.equal(data.customerPhone);
-    expect(response.body.data.customer.address).to.be.equal(
-      data.customerAddress
-    );
-    expect(response.body.data.customer.description).to.be.equal(
-      data.customerDesc
-    );
+    expect(response.body.data.customer.address).to.be.equal(data.customerAddress);
+    expect(response.body.data.customer.description).to.be.equal(data.customerDesc);
     expect(response.body).to.be.jsonSchema({
       $schema: "http://json-schema.org/draft-06/schema#",
       $ref: "#/definitions/Welcome4",
