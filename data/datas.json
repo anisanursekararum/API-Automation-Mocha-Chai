@@ -18,5 +18,14 @@
   "customerNameUpdate" : "Ryujin Shin Update",
   "customerPhoneUpdate" : "0810000000",
   "customerAddressUpdate" : "Surabaya Update",
-  "customerDescUpdate" : "Customer Cabang Jatim Area Update"
+  "customerDescUpdate" : "Customer Cabang Jatim Area Update",
+  "productCategoryID" : "8d441214-9191-458d-ab41-3fdd75cdc593",
+  "productName": "TARO",
+  "productPrice": "3500",
+  "productCost": "3000",
+  "productStock": "10",
+  "productNameUpdate": "TARO",
+  "productPriceUpdate": "3500",
+  "productCostUpdate": "3000",
+  "productStockUpdate": "10"
 }

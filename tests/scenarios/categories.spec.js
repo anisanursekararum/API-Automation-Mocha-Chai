@@ -31,7 +31,7 @@ describe('TS Categories', () => {
 			expect(response.body.status).to.be.equal(message.success);
 			expect(response.body.message).to.be.equal(message.successAddCategory);
 			expect(response.body.data.name).to.be.equal(data.categoryName);
-		})
+	    })
 		
 	it('TC get detail category', async () => {
 		const response = await new categories().getCategories(token, categoryId)
