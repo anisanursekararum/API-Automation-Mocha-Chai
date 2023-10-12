@@ -7,7 +7,8 @@
     "test": "mocha ./tests/scenarios/*.js --timeout 5000",
     "auth": "mocha ./tests/scenarios/auth.spec.js --timeout 5000",
     "user": "mocha ./tests/scenarios/user.spec.js --timeout 5000",
-    "unit": "mocha ./tests/scenarios/unit.spec.js --timeout 5000"
+    "unit": "mocha ./tests/scenarios/unit.spec.js --timeout 5000",
+    "categories": "mocha ./tests/scenarios/categories.spec.js --timeout 5000"
   },
   "author": "",
   "license": "ISC",
