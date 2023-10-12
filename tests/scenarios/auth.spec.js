@@ -7,7 +7,7 @@ const { registration } = require("../../data/registration.data");
 const expect = require('chai').expect
 chai.use(chaiHttp)
 
-describe('Authentication', () => {
+describe('TS Authentication', () => {
   login.forEach(item => {
     it(item.case.title, async () => {
       const response = await new auth().login(item.payload)

@@ -3,7 +3,7 @@ let uniqueSeed = Date.now().toString()
 const registration = [
   {
     case: {
-      title: 'success register',
+      title: 'TC success register',
       status: 201,
       message: "Toko berhasil didaftarkan"
     },
@@ -15,7 +15,7 @@ const registration = [
   },
   {
     case: {
-      title: 'failed register name empty',
+      title: 'TC failed register name empty',
       status: 400,
       message: "\"name\" is not allowed to be empty"
     },
@@ -27,7 +27,7 @@ const registration = [
   },
   {
     case: {
-      title: 'failed register email empty',
+      title: 'TC failed register email empty',
       status: 400,
       message: "\"email\" is not allowed to be empty"
     },
@@ -39,7 +39,7 @@ const registration = [
   },
   {
     case: {
-      title: 'failed register password empty',
+      title: 'TC failed register password empty',
       status: 400,
       message: "\"password\" is not allowed to be empty"
     },
@@ -51,7 +51,7 @@ const registration = [
   },
   {
     case: {
-      title: 'failed register unknown parameter',
+      title: 'TC failed register unknown parameter',
       status: 400,
       message: "\"id\" is not allowed"
     },
@@ -64,7 +64,7 @@ const registration = [
   },
   {
     case: {
-      title: 'failed register name parameter is not sent',
+      title: 'TC failed register name parameter is not sent',
       status: 400,
       message: "\"name\" is required"
     },
@@ -75,7 +75,7 @@ const registration = [
   },
   {
     case: {
-      title: 'failed register email parameter is not sent',
+      title: 'TC failed register email parameter is not sent',
       status: 400,
       message: "\"email\" is required"
     },
@@ -86,7 +86,7 @@ const registration = [
   },
   {
     case: {
-      title: 'failed register password parameter is not sent',
+      title: 'TC failed register password parameter is not sent',
       status: 400,
       message: "\"password\" is required"
     },

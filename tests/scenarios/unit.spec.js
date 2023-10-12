@@ -8,7 +8,7 @@ const chaiSchema = require('chai-json-schema');
 const expect = require('chai').expect
 chai.use(chaiSchema)
 
-describe('Unit', () => {
+describe('TS Unit', () => {
 	let token = ''
 	// let uniqueSeed = Date.now().toString()
 	let unitId = ''

@@ -8,7 +8,7 @@ const chaiSchema = require('chai-json-schema');
 const expect = require('chai').expect
 chai.use(chaiSchema)
 
-describe('User', () => {
+describe('TS User', () => {
 	let token = ''
 	let uniqueSeed = Date.now().toString()
 	let userId = ''
@@ -21,7 +21,7 @@ describe('User', () => {
 		token = response.body.data.accessToken
 	})
 	
-	it('successfully add user', async () => {
+	it('TC successfully add user', async () => {
 		const response = await new user().addUser(token,
 			{
 				"name": "user"+uniqueSeed,
@@ -34,7 +34,7 @@ describe('User', () => {
 			expect(response.body.message).to.be.equal(message.successAddUser);
 		})
 		
-	it('get detail user', async () => {
+	it('TC get detail user', async () => {
 		const response = await new user().getUser(token, userId)
 		expect(response.statusCode).to.be.equal(200);
 		expect(response.body).to.be.jsonSchema({
@@ -101,7 +101,7 @@ describe('User', () => {
 		})
 	})
 
-	it('update user', async () => {
+	it('TC update user', async () => {
 		const response = await new user().updateUser(token, userId, 
 			{
 				"name" : data.nameUpdate, 
@@ -113,7 +113,7 @@ describe('User', () => {
 			expect(response.body.data.name).to.be.equal(data.nameUpdate);
 	})
 
-	it('delete user', async () => {
+	it('TC delete user', async () => {
 		const response = await new user().deleteUser(token, userId)
 			expect(response.statusCode).to.be.equal(200);
 			expect(response.body.status).to.be.equal(message.success);
