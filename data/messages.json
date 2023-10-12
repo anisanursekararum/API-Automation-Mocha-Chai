@@ -8,5 +8,6 @@
   "successAddCustomer": "Customer berhasil ditambahkan",
   "successAddProduct": "Product berhasil ditambahkan",
   "successUpdateProduct": "Product berhasil diupdate",
-  "successDeleteProduct": "Product berhasil dihapus"
+  "successDeleteProduct": "Product berhasil dihapus",
+  "successAddTransaksi": "transaksi ditambahkan"
 }

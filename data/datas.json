@@ -27,5 +27,9 @@
   "productNameUpdate": "TARO",
   "productPriceUpdate": "3500",
   "productCostUpdate": "3000",
-  "productStockUpdate": "10"
+  "productStockUpdate": "10",
+  "officeId": "a7265213-9538-4416-b3f8-7bb27a6f5000",
+  "invoice": "Invoice Sale KasirAja",
+  "transactionDesc": "Ini deskripsi dari sale invoice KasirAja",
+  "casier": "Postman1"
 }
