@@ -1,6 +1,6 @@
 const chai = require("chai");
 const { describe, it } = require("mocha");
-const categories = require("../apis/categories.api");
+const customers = require("../apis/customers.api");
 const auth = require("../apis/auth.api");
 const data = require('../../data/datas.json');
 const message = require('../../data/messages.json');
@@ -8,9 +8,9 @@ const chaiSchema = require('chai-json-schema');
 const expect = require('chai').expect
 chai.use(chaiSchema)
 
-describe('TS Categories', () => {
+describe('TS Customers', () => {
 	let token = ''
-	let categoryId = ''
+	let customerId = ''
 	
 	before(async () => {
 		const response = await new auth().login({
@@ -20,30 +20,34 @@ describe('TS Categories', () => {
 		token = response.body.data.accessToken
 	})
 	
-	it('TC successfully add category', async () => {
-		const response = await new categories().addCategories(token,
+	it('TC successfully add customer', async () => {
+		const response = await new customers().addCustomer(token,
 			{
-				"name": data.categoryName,
-				"description": data.categoryDesc
+        "name": data.customerName,
+        "phone": data.customerPhone,
+        "address": data.customerAddress,
+        "description": data.customerDesc
 			})
-			categoryId = response.body.data.categoryId
+			customerId = response.body.data.customerId
 			expect(response.statusCode).to.be.equal(201);
 			expect(response.body.status).to.be.equal(message.success);
-			expect(response.body.message).to.be.equal(message.successAddCategory);
-			expect(response.body.data.name).to.be.equal(data.categoryName);
+			expect(response.body.message).to.be.equal(message.successAddCustomer);
+			expect(response.body.data.name).to.be.equal(data.customerName);
 		})
 		
-	it('TC get detail category', async () => {
-		const response = await new categories().getCategories(token, categoryId)
+	it('TC get detail customer', async () => {
+		const response = await new customers().getCustomer(token, customerId)
 		expect(response.statusCode).to.be.equal(200);
 		expect(response.body.status).to.be.equal(message.success);
-		expect(response.body.data.category.name).to.be.equal(data.categoryName);
-		expect(response.body.data.category.description).to.be.equal(data.categoryDesc);
+		expect(response.body.data.customer.name).to.be.equal(data.customerName);
+		expect(response.body.data.customer.phone).to.be.equal(data.customerPhone);
+		expect(response.body.data.customer.address).to.be.equal(data.customerAddress);
+		expect(response.body.data.customer.description).to.be.equal(data.customerDesc);
 		expect(response.body).to.be.jsonSchema({
       "$schema": "http://json-schema.org/draft-06/schema#",
-      "$ref": "#/definitions/Welcome1",
+      "$ref": "#/definitions/Welcome4",
       "definitions": {
-          "Welcome1": {
+          "Welcome4": {
               "type": "object",
               "additionalProperties": false,
               "properties": {
@@ -58,26 +62,32 @@ describe('TS Categories', () => {
                   "data",
                   "status"
               ],
-              "title": "Welcome1"
+              "title": "Welcome4"
           },
           "Data": {
               "type": "object",
               "additionalProperties": false,
               "properties": {
-                  "category": {
-                      "$ref": "#/definitions/Category"
+                  "customer": {
+                      "$ref": "#/definitions/Customer"
                   }
               },
               "required": [
-                  "category"
+                  "customer"
               ],
               "title": "Data"
           },
-          "Category": {
+          "Customer": {
               "type": "object",
               "additionalProperties": false,
               "properties": {
                   "name": {
+                      "type": "string"
+                  },
+                  "phone": {
+                      "type": "string"
+                  },
+                  "address": {
                       "type": "string"
                   },
                   "description": {
@@ -85,28 +95,32 @@ describe('TS Categories', () => {
                   }
               },
               "required": [
+                  "address",
                   "description",
-                  "name"
+                  "name",
+                  "phone"
               ],
-              "title": "Category"
+              "title": "Customer"
           }
       }
 		})
 	})
 
-	it('TC update category', async () => {
-		const response = await new categories().updateCategories(token, categoryId, 
+	it('TC update customer', async () => {
+		const response = await new customers().updateCustomer(token, customerId, 
 			{
-				"name": data.categoryUpdate,
-				"description": data.categoryDesc
+        "name": data.customerNameUpdate,
+        "phone": data.customerPhoneUpdate,
+        "address": data.customerAddressUpdate,
+        "description": data.customerDescUpdate
 			})
 			expect(response.statusCode).to.be.equal(200);
 			expect(response.body.status).to.be.equal(message.success);
-			expect(response.body.data.name).to.be.equal(data.categoryUpdate);
+			expect(response.body.data.name).to.be.equal(data.customerNameUpdate);
 	})
 
-	it('TC delete category', async () => {
-		const response = await new categories().deleteCategories(token, categoryId)
+	it('TC delete customer', async () => {
+		const response = await new customers().deleteCustomer(token, customerId)
 			expect(response.statusCode).to.be.equal(200);
 			expect(response.body.status).to.be.equal(message.success);
 	})
