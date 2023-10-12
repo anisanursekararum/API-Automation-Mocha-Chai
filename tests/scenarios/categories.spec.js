@@ -20,7 +20,7 @@ describe('TS Categories', () => {
 		token = response.body.data.accessToken
 	})
 	
-	it('TC successfully add categorie', async () => {
+	it('TC successfully add category', async () => {
 		const response = await new categories().addCategories(token,
 			{
 				"name": data.categoryName,
@@ -29,11 +29,11 @@ describe('TS Categories', () => {
 			categoryId = response.body.data.categoryId
 			expect(response.statusCode).to.be.equal(201);
 			expect(response.body.status).to.be.equal(message.success);
-			expect(response.body.message).to.be.equal(message.successAddCategorie);
+			expect(response.body.message).to.be.equal(message.successAddCategory);
 			expect(response.body.data.name).to.be.equal(data.categoryName);
 		})
 		
-	it('TC get detail categorie', async () => {
+	it('TC get detail category', async () => {
 		const response = await new categories().getCategories(token, categoryId)
 		expect(response.statusCode).to.be.equal(200);
 		expect(response.body.status).to.be.equal(message.success);
@@ -94,7 +94,7 @@ describe('TS Categories', () => {
 		})
 	})
 
-	it('TC update categorie', async () => {
+	it('TC update category', async () => {
 		const response = await new categories().updateCategories(token, categoryId, 
 			{
 				"name": data.categoryUpdate,
@@ -105,7 +105,7 @@ describe('TS Categories', () => {
 			expect(response.body.data.name).to.be.equal(data.categoryUpdate);
 	})
 
-	it('TC delete categorie', async () => {
+	it('TC delete category', async () => {
 		const response = await new categories().deleteCategories(token, categoryId)
 			expect(response.statusCode).to.be.equal(200);
 			expect(response.body.status).to.be.equal(message.success);

@@ -10,5 +10,13 @@
   "unitDescUpdate" : "Deskripsi produk ini telah diupdate",
   "categoryName" : "Alas kaki",
   "categoryDesc" : "Alas kaki termasuk sandal, sepatu, kaos kaki, dll",
-  "categoryUpdate" : "Alas kaki Terupdate"
+  "categoryUpdate" : "Alas kaki Terupdate",
+  "customerName" : "Ryujin Shin",
+  "customerPhone" : "0813456789",
+  "customerAddress" : "Surabaya",
+  "customerDesc" : "Customer Cabang Jatim Area",
+  "customerNameUpdate" : "Ryujin Shin Update",
+  "customerPhoneUpdate" : "0810000000",
+  "customerAddressUpdate" : "Surabaya Update",
+  "customerDescUpdate" : "Customer Cabang Jatim Area Update"
 }
