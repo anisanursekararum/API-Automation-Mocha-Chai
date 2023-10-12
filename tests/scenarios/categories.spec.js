@@ -32,6 +32,8 @@ describe("TS Categories", () => {
     expect(response.body.data.name).to.be.equal(data.categoryName);
   });
 
+  module.exports = categoryId;
+
   it("TC get detail category", async () => {
     const response = await new categories().getCategories(token, categoryId);
     expect(response.statusCode).to.be.equal(200);

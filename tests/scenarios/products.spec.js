@@ -2,6 +2,7 @@ const chai = require("chai");
 const { describe, it } = require("mocha");
 const products = require("../apis/products.api");
 const auth = require("../apis/auth.api");
+const categories = require("../apis/categories.api");
 const data = require("../../data/datas.json");
 const message = require("../../data/messages.json");
 const chaiSchema = require("chai-json-schema");
@@ -12,6 +13,7 @@ describe("TS Products", () => {
   let token = "";
   let uniqueSeed = Date.now().toString();
   let productId = "";
+  let categoryId = "";
 
   before(async () => {
     const response = await new auth().login({
@@ -21,9 +23,18 @@ describe("TS Products", () => {
     token = response.body.data.accessToken;
   });
 
+  before(async () => {
+    const response = await new categories().addCategories(token, {
+      name: data.categoryName,
+      description: data.categoryDesc,
+    });
+    categoryId = response.body.data.categoryId;
+    expect(response.statusCode).to.be.equal(201);
+  });
+
   it("TC successfully add product", async () => {
     const response = await new products().addProduct(token, {
-      category_id: data.productCategoryID,
+      category_id: categoryId,
       code: uniqueSeed,
       name: data.productName,
       price: data.productPrice,
@@ -46,7 +57,7 @@ describe("TS Products", () => {
     expect(response.body.status).to.be.equal(message.success);
     expect(response.body.data.product.name).to.be.equal(data.productName);
     expect(price).to.be.equal(data.productPrice);
-    expect(response.body.data.product.category_id).to.be.equal(data.productCategoryID);
+    expect(response.body.data.product.category_id).to.be.equal(categoryId);
     expect(cost).to.be.equal(data.productCost);
     expect(stock).to.be.equal(data.productStock);
     expect(response.body).to.be.jsonSchema({
