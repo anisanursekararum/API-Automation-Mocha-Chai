@@ -18,12 +18,24 @@ describe("TS Products", () => {
   let categoryId = "";
   let customerId = "";
   let saleId = "";
+  let purchaseId = "";
 
+  function getRandomThreeDigitNumber() {
+    const min = 100;
+    const max = 999;
+    const randomThreeDigitNumber = Math.floor(
+      Math.random() * (max - min + 1) + min
+    );
+    return randomThreeDigitNumber;
+  }
+
+  const randomNum = getRandomThreeDigitNumber();
   const today = new Date();
-  const year = today.getFullYear(); 
-  const month = today.getMonth() + 1; 
-  const day = today.getDate(); 
+  const year = today.getFullYear();
+  const month = today.getMonth() + 1;
+  const day = today.getDate();
   const formattedDate = `${year}-${month}-${day}`;
+  const invoice = `INV/${day}/${month}/${year}/${randomNum}`;
 
   before(async () => {
     const response = await new auth().login({
@@ -51,7 +63,7 @@ describe("TS Products", () => {
     });
     customerId = response.body.data.customerId;
     expect(response.statusCode).to.be.equal(201);
-  })
+  });
 
   before(async () => {
     const response = await new products().addProduct(token, {
@@ -71,17 +83,17 @@ describe("TS Products", () => {
       officeId: data.officeId,
       customerId: customerId,
       date: formattedDate,
-      invoice: data.invoice,
+      invoice: invoice,
       amount: 2000,
       discount: 0,
       description: data.transactionDesc,
-      items : [
-          {
-            productId: productId,
-            quantity: 1,
-            price: 2000
-          }
-      ]
+      items: [
+        {
+          productId: productId,
+          quantity: 1,
+          price: 2000,
+        },
+      ],
     });
     saleId = response.body.data.saleId;
     expect(response.statusCode).to.be.equal(201);
@@ -93,13 +105,41 @@ describe("TS Products", () => {
     const response = await new transactions().getSale(token, saleId);
     expect(response.statusCode).to.be.equal(200);
     expect(response.body.status).to.be.equal(message.success);
-    expect(response.body.data.sale.invoice).to.be.equal(data.invoice);
+    expect(response.body.data.sale.invoice).to.be.equal(invoice);
     expect(response.body.data.sale.description).to.be.equal(data.transactionDesc);
     expect(response.body.data.sale.casier).to.be.equal(data.casier);
     expect(response.body.data.sale.customer_id).to.be.equal(customerId);
     expect(response.body.data.sale.customer_name).to.be.equal(data.customerName);
     expect(response.body.data.sale.items[0].id).to.be.equal(productId);
-    expect(response.body.data.sale.items[0].name).to.be.equal( data.productName);
-  })
+    expect(response.body.data.sale.items[0].name).to.be.equal(data.productName);
+  });
 
+  it("TC successfully add purchase", async () => {
+    const response = await new transactions().addPurchase(token, {
+      officeId: data.officeId,
+      date: formattedDate,
+      invoice: invoice,
+      amount: 14000,
+      discount: 0,
+      description: data.transactionDesc,
+      items: [
+        {
+          productId: productId,
+          quantity: 4,
+          cost: 3500,
+        },
+      ],
+    });
+    purchaseId = response.body.data.purchaseId;
+    expect(response.statusCode).to.be.equal(201);
+    expect(response.body.status).to.be.equal(message.success);
+    expect(response.body.message).to.be.equal(message.successAddTransaksi);
+  });
+
+  it("TC successfully get purchase", async () => {
+    const response = await new transactions().getPurchase(token, purchaseId);
+    expect(response.statusCode).to.be.equal(200);
+    expect(response.body.status).to.be.equal(message.success);
+    expect(response.body.data.purchase.invoice).to.be.equal(invoice);
+  });
 });

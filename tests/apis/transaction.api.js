@@ -30,25 +30,26 @@ class transactions {
     return response;
   }
 
-  // async updateProduct(token, productId, payload) {
-  //   const response = await chai
-  //     .request(this.host)
-  //     .put("/products/" + productId)
-  //     .set("Authorization", "Bearer " + token)
-  //     .set("Content-Type", this.header)
-  //     .set("Accept", this.header)
-  //     .send(payload);
-  //   return response;
-  // }
+  async addPurchase(token, payload) {
+    const response = await chai
+      .request(this.host)
+      .post("/purchases")
+      .set("Authorization", "Bearer " + token)
+      .set("Content-Type", this.header)
+      .set("Accept", this.header)
+      .send(payload);
+    return response;
+  }
 
-  // async deleteProduct(token, productId) {
-  //   const response = await chai
-  //     .request(this.host)
-  //     .delete("/products/" + productId)
-  //     .set("Authorization", "Bearer " + token)
-  //     .set("Accept", this.header);
-  //   return response;
-  // }
+  async getPurchase(token, purchaseId) {
+    const response = await chai
+      .request(this.host)
+      .get("/purchases/" + purchaseId)
+      .set("Authorization", "Bearer " + token)
+      .set("Content-Type", this.header)
+      .set("Accept", this.header);
+    return response;
+  }
 }
 
 module.exports = transactions;
