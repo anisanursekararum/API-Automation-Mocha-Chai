@@ -34,5 +34,35 @@ Run User Scenarios
 npm run user
 ```
 
+Run Unit Scenarios
+
+```sh
+npm run unit
+```
+
+Run Categories Scenarios
+
+```sh
+npm run categories
+```
+
+Run Customer Scenarios
+
+```sh
+npm run customer
+```
+
+Run Product Scenarios
+
+```sh
+npm run product
+```
+
+Run Transaction Scenarios
+
+```sh
+npm run transaction
+```
+
 Postman collections : https://drive.google.com/file/d/1b9yVDQLHAkDo026fLOiy2N_G23ygi8Fq/view?usp=sharing
 Postman environtment : https://drive.google.com/file/d/1FlcNQXc1HI810tTB7Iru18GDkZoCZemj/view?usp=sharing
