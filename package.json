@@ -5,8 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha ./tests/scenarios/*.js --timeout 5000",
-    "auth": "mocha ./tests/scenarios/login.spec.js --timeout 5000",
-    "user": "mocha ./tests/scenarios/user.spec.js --timeout 5000"
+    "auth": "mocha ./tests/scenarios/auth.spec.js --timeout 5000",
+    "user": "mocha ./tests/scenarios/user.spec.js --timeout 5000",
+    "unit": "mocha ./tests/scenarios/unit.spec.js --timeout 5000",
+    "categories": "mocha ./tests/scenarios/categories.spec.js --timeout 5000",    
+    "customer": "mocha ./tests/scenarios/customers.spec.js --timeout 5000",
+    "product": "mocha ./tests/scenarios/products.spec.js --timeout 5000",
+    "transaction": "mocha ./tests/scenarios/transactions.spec.js --timeout 5000"
   },
   "author": "",
   "license": "ISC",

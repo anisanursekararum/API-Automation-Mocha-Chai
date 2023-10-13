@@ -3,16 +3,16 @@ const chaiHttp = require("chai-http");
 const data = require("../../data/datas.json");
 chai.use(chaiHttp);
 
-class user {
+class transactions {
   constructor() {
     this.host = data.baseURL;
     this.header = data.header;
   }
 
-  async addUser(token, payload) {
+  async addSale(token, payload) {
     const response = await chai
       .request(this.host)
-      .post("/users")
+      .post("/sales")
       .set("Authorization", "Bearer " + token)
       .set("Content-Type", this.header)
       .set("Accept", this.header)
@@ -20,20 +20,20 @@ class user {
     return response;
   }
 
-  async getUser(token, userId) {
+  async getSale(token, saleId) {
     const response = await chai
       .request(this.host)
-      .get("/users/" + userId)
+      .get("/sales/" + saleId)
       .set("Authorization", "Bearer " + token)
       .set("Content-Type", this.header)
       .set("Accept", this.header);
     return response;
   }
 
-  async updateUser(token, userId, payload) {
+  async addPurchase(token, payload) {
     const response = await chai
       .request(this.host)
-      .put("/users/" + userId)
+      .post("/purchases")
       .set("Authorization", "Bearer " + token)
       .set("Content-Type", this.header)
       .set("Accept", this.header)
@@ -41,13 +41,15 @@ class user {
     return response;
   }
 
-  async deleteUser(token, userId) {
+  async getPurchase(token, purchaseId) {
     const response = await chai
       .request(this.host)
-      .delete("/users/" + userId)
-      .set("Authorization", "Bearer " + token);
+      .get("/purchases/" + purchaseId)
+      .set("Authorization", "Bearer " + token)
+      .set("Content-Type", this.header)
+      .set("Accept", this.header);
     return response;
   }
 }
 
-module.exports = user;
+module.exports = transactions;

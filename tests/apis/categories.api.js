@@ -3,16 +3,16 @@ const chaiHttp = require("chai-http");
 const data = require("../../data/datas.json");
 chai.use(chaiHttp);
 
-class user {
+class categories {
   constructor() {
     this.host = data.baseURL;
     this.header = data.header;
   }
 
-  async addUser(token, payload) {
+  async addCategories(token, payload) {
     const response = await chai
       .request(this.host)
-      .post("/users")
+      .post("/categories")
       .set("Authorization", "Bearer " + token)
       .set("Content-Type", this.header)
       .set("Accept", this.header)
@@ -20,20 +20,20 @@ class user {
     return response;
   }
 
-  async getUser(token, userId) {
+  async getCategories(token, categoryId) {
     const response = await chai
       .request(this.host)
-      .get("/users/" + userId)
+      .get("/categories/" + categoryId)
       .set("Authorization", "Bearer " + token)
       .set("Content-Type", this.header)
       .set("Accept", this.header);
     return response;
   }
 
-  async updateUser(token, userId, payload) {
+  async updateCategories(token, categoryId, payload) {
     const response = await chai
       .request(this.host)
-      .put("/users/" + userId)
+      .put("/categories/" + categoryId)
       .set("Authorization", "Bearer " + token)
       .set("Content-Type", this.header)
       .set("Accept", this.header)
@@ -41,13 +41,14 @@ class user {
     return response;
   }
 
-  async deleteUser(token, userId) {
+  async deleteCategories(token, categoryId) {
     const response = await chai
       .request(this.host)
-      .delete("/users/" + userId)
-      .set("Authorization", "Bearer " + token);
+      .delete("/categories/" + categoryId)
+      .set("Authorization", "Bearer " + token)
+      .set("Accept", this.header);
     return response;
   }
 }
 
-module.exports = user;
+module.exports = categories;

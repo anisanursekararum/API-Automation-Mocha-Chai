@@ -1,6 +1,6 @@
 const chai = require("chai");
 const { describe, it } = require("mocha");
-const user = require("../apis/user.api");
+const categories = require("../apis/categories.api");
 const auth = require("../apis/auth.api");
 const data = require("../../data/datas.json");
 const message = require("../../data/messages.json");
@@ -8,10 +8,9 @@ const chaiSchema = require("chai-json-schema");
 const expect = require("chai").expect;
 chai.use(chaiSchema);
 
-describe("TS User", () => {
+describe("TS Categories", () => {
   let token = "";
-  let uniqueSeed = Date.now().toString();
-  let userId = "";
+  let categoryId = "";
 
   before(async () => {
     const response = await new auth().login({
@@ -21,26 +20,31 @@ describe("TS User", () => {
     token = response.body.data.accessToken;
   });
 
-  it("TC successfully add user", async () => {
-    const response = await new user().addUser(token, {
-      name: "user" + uniqueSeed,
-      email: uniqueSeed + "user@gmail.com",
-      password: "password",
+  it("TC successfully add category", async () => {
+    const response = await new categories().addCategories(token, {
+      name: data.categoryName,
+      description: data.categoryDesc,
     });
-    userId = response.body.data.userId;
+    categoryId = response.body.data.categoryId;
     expect(response.statusCode).to.be.equal(201);
     expect(response.body.status).to.be.equal(message.success);
-    expect(response.body.message).to.be.equal(message.successAddUser);
+    expect(response.body.message).to.be.equal(message.successAddCategory);
+    expect(response.body.data.name).to.be.equal(data.categoryName);
   });
 
-  it("TC get detail user", async () => {
-    const response = await new user().getUser(token, userId);
+  module.exports = categoryId;
+
+  it("TC get detail category", async () => {
+    const response = await new categories().getCategories(token, categoryId);
     expect(response.statusCode).to.be.equal(200);
+    expect(response.body.status).to.be.equal(message.success);
+    expect(response.body.data.category.name).to.be.equal(data.categoryName);
+    expect(response.body.data.category.description).to.be.equal(data.categoryDesc);
     expect(response.body).to.be.jsonSchema({
       $schema: "http://json-schema.org/draft-06/schema#",
-      $ref: "#/definitions/Welcome5",
+      $ref: "#/definitions/Welcome1",
       definitions: {
-        Welcome5: {
+        Welcome1: {
           type: "object",
           additionalProperties: false,
           properties: {
@@ -52,59 +56,52 @@ describe("TS User", () => {
             },
           },
           required: ["data", "status"],
-          title: "Welcome5",
+          title: "Welcome1",
         },
         Data: {
           type: "object",
           additionalProperties: false,
           properties: {
-            user: {
-              $ref: "#/definitions/User",
+            category: {
+              $ref: "#/definitions/Category",
             },
           },
-          required: ["user"],
+          required: ["category"],
           title: "Data",
         },
-        User: {
+        Category: {
           type: "object",
           additionalProperties: false,
           properties: {
-            id: {
-              type: "string",
-              format: "uuid",
-            },
             name: {
               type: "string",
             },
-            email: {
-              type: "string",
-            },
-            role: {
+            description: {
               type: "string",
             },
           },
-          required: ["email", "id", "name", "role"],
-          title: "User",
+          required: ["description", "name"],
+          title: "Category",
         },
       },
     });
   });
 
-  it("TC update user", async () => {
-    const response = await new user().updateUser(token, userId, {
-      name: data.nameUpdate,
-      email: uniqueSeed + "userUpdate@gmail.com",
-    });
+  it("TC update category", async () => {
+    const response = await new categories().updateCategories(token, categoryId,
+      {
+        name: data.categoryUpdate,
+        description: data.categoryDesc,
+      }
+    );
     expect(response.statusCode).to.be.equal(200);
     expect(response.body.status).to.be.equal(message.success);
-    expect(response.body.message).to.be.equal(message.successUpdateUser);
-    expect(response.body.data.name).to.be.equal(data.nameUpdate);
+    expect(response.body.data.name).to.be.equal(data.categoryUpdate);
   });
 
-  it("TC delete user", async () => {
-    const response = await new user().deleteUser(token, userId);
+  it("TC delete category", async () => {
+    const response = await new categories().deleteCategories(token, categoryId);
     expect(response.statusCode).to.be.equal(200);
     expect(response.body.status).to.be.equal(message.success);
-    expect(response.body.message).to.be.equal(message.successDeleteUser);
   });
 });

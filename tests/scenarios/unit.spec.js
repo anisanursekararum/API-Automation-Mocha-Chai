@@ -1,6 +1,6 @@
 const chai = require("chai");
 const { describe, it } = require("mocha");
-const user = require("../apis/user.api");
+const unit = require("../apis/unit.api");
 const auth = require("../apis/auth.api");
 const data = require("../../data/datas.json");
 const message = require("../../data/messages.json");
@@ -8,10 +8,9 @@ const chaiSchema = require("chai-json-schema");
 const expect = require("chai").expect;
 chai.use(chaiSchema);
 
-describe("TS User", () => {
+describe("TS Unit", () => {
   let token = "";
-  let uniqueSeed = Date.now().toString();
-  let userId = "";
+  let unitId = "";
 
   before(async () => {
     const response = await new auth().login({
@@ -21,26 +20,29 @@ describe("TS User", () => {
     token = response.body.data.accessToken;
   });
 
-  it("TC successfully add user", async () => {
-    const response = await new user().addUser(token, {
-      name: "user" + uniqueSeed,
-      email: uniqueSeed + "user@gmail.com",
-      password: "password",
+  it("TC successfully add unit", async () => {
+    const response = await new unit().addUnit(token, {
+      name: data.unitName,
+      description: data.unitDesc,
     });
-    userId = response.body.data.userId;
+    unitId = response.body.data.unitId;
     expect(response.statusCode).to.be.equal(201);
     expect(response.body.status).to.be.equal(message.success);
-    expect(response.body.message).to.be.equal(message.successAddUser);
+    expect(response.body.message).to.be.equal(message.successAddUnit);
+    expect(response.body.data.name).to.be.equal(data.unitName);
   });
 
-  it("TC get detail user", async () => {
-    const response = await new user().getUser(token, userId);
+  it("TC get detail unit", async () => {
+    const response = await new unit().getUnit(token, unitId);
     expect(response.statusCode).to.be.equal(200);
+    expect(response.body.status).to.be.equal(message.success);
+    expect(response.body.data.unit.name).to.be.equal(data.unitName);
+    expect(response.body.data.unit.description).to.be.equal(data.unitDesc);
     expect(response.body).to.be.jsonSchema({
       $schema: "http://json-schema.org/draft-06/schema#",
-      $ref: "#/definitions/Welcome5",
+      $ref: "#/definitions/Welcome4",
       definitions: {
-        Welcome5: {
+        Welcome4: {
           type: "object",
           additionalProperties: false,
           properties: {
@@ -52,59 +54,50 @@ describe("TS User", () => {
             },
           },
           required: ["data", "status"],
-          title: "Welcome5",
+          title: "Welcome4",
         },
         Data: {
           type: "object",
           additionalProperties: false,
           properties: {
-            user: {
-              $ref: "#/definitions/User",
+            unit: {
+              $ref: "#/definitions/Unit",
             },
           },
-          required: ["user"],
+          required: ["unit"],
           title: "Data",
         },
-        User: {
+        Unit: {
           type: "object",
           additionalProperties: false,
           properties: {
-            id: {
-              type: "string",
-              format: "uuid",
-            },
             name: {
               type: "string",
             },
-            email: {
-              type: "string",
-            },
-            role: {
+            description: {
               type: "string",
             },
           },
-          required: ["email", "id", "name", "role"],
-          title: "User",
+          required: ["description", "name"],
+          title: "Unit",
         },
       },
     });
   });
 
-  it("TC update user", async () => {
-    const response = await new user().updateUser(token, userId, {
-      name: data.nameUpdate,
-      email: uniqueSeed + "userUpdate@gmail.com",
+  it("TC update unit", async () => {
+    const response = await new unit().updateUnit(token, unitId, {
+      name: data.unitUpdate,
+      description: data.unitDescUpdate,
     });
     expect(response.statusCode).to.be.equal(200);
     expect(response.body.status).to.be.equal(message.success);
-    expect(response.body.message).to.be.equal(message.successUpdateUser);
-    expect(response.body.data.name).to.be.equal(data.nameUpdate);
+    expect(response.body.data.name).to.be.equal(data.unitUpdate);
   });
 
-  it("TC delete user", async () => {
-    const response = await new user().deleteUser(token, userId);
+  it("TC delete unit", async () => {
+    const response = await new unit().deleteUnit(token, unitId);
     expect(response.statusCode).to.be.equal(200);
     expect(response.body.status).to.be.equal(message.success);
-    expect(response.body.message).to.be.equal(message.successDeleteUser);
   });
 });

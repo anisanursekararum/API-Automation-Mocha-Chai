@@ -1,70 +1,70 @@
 const login = [
   {
     case: {
-      title: 'success',
+      title: "TC success login",
       status: 201,
-      message: "Authentication berhasil ditambahkan"
+      message: "Authentication berhasil ditambahkan",
     },
     payload: {
-      "email" : "1691246243-toko5@gmail.com",
-      "password" : "password"
+      email: "1691246243-toko5@gmail.com",
+      password: "password",
     },
   },
   {
     case: {
-      title: 'failed password empty',
+      title: "TC failed login password empty",
       status: 400,
-      message: "\"password\" is not allowed to be empty"
+      message: '"password" is not allowed to be empty',
     },
     payload: {
-      "email" : "1691246243-toko5@gmail.com",
-      "password" : ""
+      email: "1691246243-toko5@gmail.com",
+      password: "",
     },
   },
   {
     case: {
-      title: 'failed email empty',
+      title: "TC failed login email empty",
       status: 400,
-      message: "\"email\" is not allowed to be empty"
+      message: '"email" is not allowed to be empty',
     },
     payload: {
-      "email" : "",
-      "password" : "password"
+      email: "",
+      password: "password",
     },
   },
   {
     case: {
-      title: 'failed email invalid',
+      title: "TC failed login email invalid",
       status: 400,
-      message: "\"email\" must be a valid email"
+      message: '"email" must be a valid email',
     },
     payload: {
-      "email": "1691246243-toko5@.com",
-      "password": "password"
+      email: "1691246243-toko5@.com",
+      password: "password",
     },
   },
   {
     case: {
-      title: 'failed password invalid',
+      title: "TC failed login password invalid",
       status: 401,
-      message: "Kredensial yang Anda berikan salah"
+      message: "Kredensial yang Anda berikan salah",
     },
     payload: {
-      "email": "1691246243-toko5@gmail.com",
-      "password": "xxxxx"
+      email: "1691246243-toko5@gmail.com",
+      password: "xxxxx",
     },
   },
   {
     case: {
-      title: 'failed invalid credential',
+      title: "TC failed login invalid credential",
       status: 401,
-      message: "Kredensial yang Anda berikan salah"
+      message: "Kredensial yang Anda berikan salah",
     },
     payload: {
-      "email": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx@gmail.com",
-      "password": "password"
+      email: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx@gmail.com",
+      password: "password",
     },
-  }
-]
+  },
+];
 
 module.exports = { login };
