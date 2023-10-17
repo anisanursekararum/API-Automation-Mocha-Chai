@@ -45,6 +45,11 @@ npm install --save-dev allure-commandline
 npm run auth:allure-report
 ```
 
+![Local Image](./images/allure-overview.png)
+![Local Image](./images/allure-behaviors.png)
+![Local Image](./images/allure-graph.png)
+![Local Image](./images/allure-suite.png)
+
 Run Auth Scenarios
 
 ```sh
