@@ -1,0 +1,75 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1697528945429' stop='1697528949112'>
+    <name>TS Unit</name>
+    <title>TS Unit</title>
+    <test-cases>
+        <test-case start='1697528946249' status='passed' stop='1697528946861'>
+            <name>TC successfully add unit</name>
+            <title>TC successfully add unit</title>
+            <labels>
+                <label name='severity' value='Critical'/>
+                <label name='epic' value='Epic Products'/>
+                <label name='feature' value='Unit Modules'/>
+                <label name='tag' value='unit'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an post request for the module unit</description>
+        </test-case>
+        <test-case start='1697528946862' status='passed' stop='1697528947680'>
+            <name>TC get detail unit</name>
+            <title>TC get detail unit</title>
+            <labels>
+                <label name='severity' value='Critical'/>
+                <label name='epic' value='Epic Products'/>
+                <label name='feature' value='Unit Modules'/>
+                <label name='tag' value='unit'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an get request for the module unit</description>
+        </test-case>
+        <test-case start='1697528947680' status='passed' stop='1697528948398'>
+            <name>TC update unit</name>
+            <title>TC update unit</title>
+            <labels>
+                <label name='severity' value='Critical'/>
+                <label name='epic' value='Epic Products'/>
+                <label name='feature' value='Unit Modules'/>
+                <label name='tag' value='unit'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an put request for the module unit</description>
+        </test-case>
+        <test-case start='1697528948398' status='passed' stop='1697528949111'>
+            <name>TC delete unit</name>
+            <title>TC delete unit</title>
+            <labels>
+                <label name='severity' value='Critical'/>
+                <label name='epic' value='Epic Products'/>
+                <label name='feature' value='Unit Modules'/>
+                <label name='tag' value='unit'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an delete request for the module unit</description>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

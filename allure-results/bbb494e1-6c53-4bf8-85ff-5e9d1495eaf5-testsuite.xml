@@ -1,0 +1,75 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1697528949114' stop='1697528952594'>
+    <name>TS User</name>
+    <title>TS User</title>
+    <test-cases>
+        <test-case start='1697528949833' status='passed' stop='1697528950750'>
+            <name>TC successfully add user</name>
+            <title>TC successfully add user</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='User Modules'/>
+                <label name='tag' value='user'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an post request for the module user</description>
+        </test-case>
+        <test-case start='1697528950751' status='passed' stop='1697528951368'>
+            <name>TC get detail user</name>
+            <title>TC get detail user</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='User Modules'/>
+                <label name='tag' value='user'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an get request for the module user</description>
+        </test-case>
+        <test-case start='1697528951368' status='passed' stop='1697528951979'>
+            <name>TC update user</name>
+            <title>TC update user</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='User Modules'/>
+                <label name='tag' value='user'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an put request for the module user</description>
+        </test-case>
+        <test-case start='1697528951980' status='passed' stop='1697528952594'>
+            <name>TC delete user</name>
+            <title>TC delete user</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='User Modules'/>
+                <label name='tag' value='user'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an delete request for the module user</description>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

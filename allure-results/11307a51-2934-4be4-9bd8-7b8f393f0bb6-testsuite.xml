@@ -1,0 +1,75 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1697529153707' stop='1697529157188'>
+    <name>TS Customers</name>
+    <title>TS Customers</title>
+    <test-cases>
+        <test-case start='1697529154727' status='passed' stop='1697529155344'>
+            <name>TC successfully add customer</name>
+            <title>TC successfully add customer</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='Customer Modules'/>
+                <label name='tag' value='customers'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an post request for the module customers</description>
+        </test-case>
+        <test-case start='1697529155345' status='passed' stop='1697529155956'>
+            <name>TC get detail customer</name>
+            <title>TC get detail customer</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='Customer Modules'/>
+                <label name='tag' value='customers'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an get request for the module customers</description>
+        </test-case>
+        <test-case start='1697529155956' status='passed' stop='1697529156571'>
+            <name>TC update customer</name>
+            <title>TC update customer</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='Customer Modules'/>
+                <label name='tag' value='customers'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an put request for the module customers</description>
+        </test-case>
+        <test-case start='1697529156571' status='passed' stop='1697529157187'>
+            <name>TC delete customer</name>
+            <title>TC delete customer</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='Customer Modules'/>
+                <label name='tag' value='customers'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an delete request for the module customers</description>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

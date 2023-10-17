@@ -1,0 +1,75 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1697529147265' stop='1697529153704'>
+    <name>TS Categories</name>
+    <title>TS Categories</title>
+    <test-cases>
+        <test-case start='1697529148175' status='passed' stop='1697529151555'>
+            <name>TC successfully add category</name>
+            <title>TC successfully add category</title>
+            <labels>
+                <label name='severity' value='Normal'/>
+                <label name='epic' value='Epic Products'/>
+                <label name='feature' value='Categories Modules'/>
+                <label name='tag' value='categories'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an post request for the module categories</description>
+        </test-case>
+        <test-case start='1697529151555' status='passed' stop='1697529152180'>
+            <name>TC get detail category</name>
+            <title>TC get detail category</title>
+            <labels>
+                <label name='severity' value='Normal'/>
+                <label name='epic' value='Epic Products'/>
+                <label name='feature' value='Categories Modules'/>
+                <label name='tag' value='categories'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an get request for the module categories</description>
+        </test-case>
+        <test-case start='1697529152181' status='passed' stop='1697529153089'>
+            <name>TC update category</name>
+            <title>TC update category</title>
+            <labels>
+                <label name='severity' value='Normal'/>
+                <label name='epic' value='Epic Products'/>
+                <label name='feature' value='Categories Modules'/>
+                <label name='tag' value='categories'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an put request for the module categories</description>
+        </test-case>
+        <test-case start='1697529153089' status='passed' stop='1697529153703'>
+            <name>TC delete category</name>
+            <title>TC delete category</title>
+            <labels>
+                <label name='severity' value='Minor'/>
+                <label name='epic' value='Epic Products'/>
+                <label name='feature' value='Categories Modules'/>
+                <label name='tag' value='categories'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an put request for the module categories</description>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

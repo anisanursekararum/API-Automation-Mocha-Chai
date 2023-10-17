@@ -1,0 +1,263 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1697528916327' stop='1697528926994'>
+    <name>TS Authentication</name>
+    <title>TS Authentication</title>
+    <test-cases>
+        <test-case start='1697528916327' status='passed' stop='1697528917380'>
+            <name>TC success login</name>
+            <title>TC success login</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='Authentication Modules'/>
+                <label name='tag' value='auth'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+                <parameter kind='environment-variable' name='Environtment' value='Production'/>
+                <parameter kind='environment-variable' name='BaseURL' value='https://kasir-api.belajarqa.com'/>
+                <parameter kind='environment-variable' name='Service' value='Web Service API'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an post request for the module auth register</description>
+        </test-case>
+        <test-case start='1697528917380' status='passed' stop='1697528917986'>
+            <name>TC failed login password empty</name>
+            <title>TC failed login password empty</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='Authentication Modules'/>
+                <label name='tag' value='auth'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+                <parameter kind='environment-variable' name='Environtment' value='Production'/>
+                <parameter kind='environment-variable' name='BaseURL' value='https://kasir-api.belajarqa.com'/>
+                <parameter kind='environment-variable' name='Service' value='Web Service API'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an post request for the module auth register</description>
+        </test-case>
+        <test-case start='1697528917986' status='passed' stop='1697528918598'>
+            <name>TC failed login email empty</name>
+            <title>TC failed login email empty</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='Authentication Modules'/>
+                <label name='tag' value='auth'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+                <parameter kind='environment-variable' name='Environtment' value='Production'/>
+                <parameter kind='environment-variable' name='BaseURL' value='https://kasir-api.belajarqa.com'/>
+                <parameter kind='environment-variable' name='Service' value='Web Service API'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an post request for the module auth register</description>
+        </test-case>
+        <test-case start='1697528918598' status='passed' stop='1697528919419'>
+            <name>TC failed login email invalid</name>
+            <title>TC failed login email invalid</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='Authentication Modules'/>
+                <label name='tag' value='auth'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+                <parameter kind='environment-variable' name='Environtment' value='Production'/>
+                <parameter kind='environment-variable' name='BaseURL' value='https://kasir-api.belajarqa.com'/>
+                <parameter kind='environment-variable' name='Service' value='Web Service API'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an post request for the module auth register</description>
+        </test-case>
+        <test-case start='1697528919420' status='passed' stop='1697528920444'>
+            <name>TC failed login password invalid</name>
+            <title>TC failed login password invalid</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='Authentication Modules'/>
+                <label name='tag' value='auth'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+                <parameter kind='environment-variable' name='Environtment' value='Production'/>
+                <parameter kind='environment-variable' name='BaseURL' value='https://kasir-api.belajarqa.com'/>
+                <parameter kind='environment-variable' name='Service' value='Web Service API'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an post request for the module auth register</description>
+        </test-case>
+        <test-case start='1697528920445' status='passed' stop='1697528921259'>
+            <name>TC failed login invalid credential</name>
+            <title>TC failed login invalid credential</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='Authentication Modules'/>
+                <label name='tag' value='auth'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+                <parameter kind='environment-variable' name='Environtment' value='Production'/>
+                <parameter kind='environment-variable' name='BaseURL' value='https://kasir-api.belajarqa.com'/>
+                <parameter kind='environment-variable' name='Service' value='Web Service API'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an post request for the module auth register</description>
+        </test-case>
+        <test-case start='1697528921259' status='passed' stop='1697528922186'>
+            <name>TC success register</name>
+            <title>TC success register</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='Authentication Modules'/>
+                <label name='tag' value='auth'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an post request for the module auth login</description>
+        </test-case>
+        <test-case start='1697528922186' status='passed' stop='1697528923011'>
+            <name>TC failed register name empty</name>
+            <title>TC failed register name empty</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='Authentication Modules'/>
+                <label name='tag' value='auth'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an post request for the module auth login</description>
+        </test-case>
+        <test-case start='1697528923011' status='passed' stop='1697528923720'>
+            <name>TC failed register email empty</name>
+            <title>TC failed register email empty</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='Authentication Modules'/>
+                <label name='tag' value='auth'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an post request for the module auth login</description>
+        </test-case>
+        <test-case start='1697528923720' status='passed' stop='1697528924332'>
+            <name>TC failed register password empty</name>
+            <title>TC failed register password empty</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='Authentication Modules'/>
+                <label name='tag' value='auth'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an post request for the module auth login</description>
+        </test-case>
+        <test-case start='1697528924333' status='passed' stop='1697528924949'>
+            <name>TC failed register unknown parameter</name>
+            <title>TC failed register unknown parameter</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='Authentication Modules'/>
+                <label name='tag' value='auth'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an post request for the module auth login</description>
+        </test-case>
+        <test-case start='1697528924950' status='passed' stop='1697528925565'>
+            <name>TC failed register name parameter is not sent</name>
+            <title>TC failed register name parameter is not sent</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='Authentication Modules'/>
+                <label name='tag' value='auth'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an post request for the module auth login</description>
+        </test-case>
+        <test-case start='1697528925565' status='passed' stop='1697528926277'>
+            <name>TC failed register email parameter is not sent</name>
+            <title>TC failed register email parameter is not sent</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='Authentication Modules'/>
+                <label name='tag' value='auth'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an post request for the module auth login</description>
+        </test-case>
+        <test-case start='1697528926277' status='passed' stop='1697528926993'>
+            <name>TC failed register password parameter is not sent</name>
+            <title>TC failed register password parameter is not sent</title>
+            <labels>
+                <label name='severity' value='Blocker'/>
+                <label name='epic' value='Epic Credentials'/>
+                <label name='feature' value='Authentication Modules'/>
+                <label name='tag' value='auth'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an post request for the module auth login</description>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
