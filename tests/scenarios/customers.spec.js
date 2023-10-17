@@ -21,6 +21,13 @@ describe("TS Customers", () => {
   });
 
   it("TC successfully add customer", async () => {
+    allure.description("This is an post request for the module customers");
+    allure.severity(data.severityBlocker);
+    allure.epic(data.epicCredentials);
+    allure.feature(data.featurCustomer);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagCustomer);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new customers().addCustomer(token, {
       name: data.customerName,
       phone: data.customerPhone,
@@ -35,13 +42,24 @@ describe("TS Customers", () => {
   });
 
   it("TC get detail customer", async () => {
+    allure.description("This is an get request for the module customers");
+    allure.severity(data.severityBlocker);
+    allure.epic(data.epicCredentials);
+    allure.feature(data.featurCustomer);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagCustomer);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new customers().getCustomer(token, customerId);
     expect(response.statusCode).to.be.equal(200);
     expect(response.body.status).to.be.equal(message.success);
     expect(response.body.data.customer.name).to.be.equal(data.customerName);
     expect(response.body.data.customer.phone).to.be.equal(data.customerPhone);
-    expect(response.body.data.customer.address).to.be.equal(data.customerAddress);
-    expect(response.body.data.customer.description).to.be.equal(data.customerDesc);
+    expect(response.body.data.customer.address).to.be.equal(
+      data.customerAddress
+    );
+    expect(response.body.data.customer.description).to.be.equal(
+      data.customerDesc
+    );
     expect(response.body).to.be.jsonSchema({
       $schema: "http://json-schema.org/draft-06/schema#",
       $ref: "#/definitions/Welcome4",
@@ -96,6 +114,13 @@ describe("TS Customers", () => {
   });
 
   it("TC update customer", async () => {
+    allure.description("This is an put request for the module customers");
+    allure.severity(data.severityBlocker);
+    allure.epic(data.epicCredentials);
+    allure.feature(data.featurCustomer);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagCustomer);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new customers().updateCustomer(token, customerId, {
       name: data.customerNameUpdate,
       phone: data.customerPhoneUpdate,
@@ -108,6 +133,13 @@ describe("TS Customers", () => {
   });
 
   it("TC delete customer", async () => {
+    allure.description("This is an delete request for the module customers");
+    allure.severity(data.severityBlocker);
+    allure.epic(data.epicCredentials);
+    allure.feature(data.featurCustomer);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagCustomer);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new customers().deleteCustomer(token, customerId);
     expect(response.statusCode).to.be.equal(200);
     expect(response.body.status).to.be.equal(message.success);

@@ -12,15 +12,18 @@
     "customer": "mocha ./tests/scenarios/customers.spec.js --timeout 5000",
     "product": "mocha ./tests/scenarios/products.spec.js --timeout 5000",
     "transaction": "mocha ./tests/scenarios/transactions.spec.js --timeout 5000",
-    "test:mochawesome": "mocha ./tests/scenarios/*.js --timeout 5000 --reporter mochawesome --reporter-options autoOpen=true"
+    "test:mochawesome": "mocha ./tests/scenarios/*.js --timeout 5000 --reporter mochawesome --reporter-options autoOpen=true",
+    "test:allure-report": "mocha ./tests/scenarios/*.js --timeout 5000 --reporter mocha-allure-reporter && allure generate --clean && allure open"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "allure-commandline": "^2.24.1",
     "chai": "^4.3.7",
     "chai-http": "^4.4.0",
     "chai-json-schema": "^1.5.1",
     "mocha": "^10.2.0",
+    "mocha-allure-reporter": "^1.4.0",
     "mochawesome": "^7.1.3",
     "mochawesome-report-generator": "^6.2.0"
   }

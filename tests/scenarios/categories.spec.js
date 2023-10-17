@@ -21,6 +21,13 @@ describe("TS Categories", () => {
   });
 
   it("TC successfully add category", async () => {
+    allure.description("This is an post request for the module categories");
+    allure.severity(data.severityNormal);
+    allure.epic(data.epicProduct);
+    allure.feature(data.featurCategories);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagCategories);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new categories().addCategories(token, {
       name: data.categoryName,
       description: data.categoryDesc,
@@ -35,11 +42,20 @@ describe("TS Categories", () => {
   module.exports = categoryId;
 
   it("TC get detail category", async () => {
+    allure.description("This is an get request for the module categories");
+    allure.severity(data.severityNormal);
+    allure.epic(data.epicProduct);
+    allure.feature(data.featurCategories);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagCategories);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new categories().getCategories(token, categoryId);
     expect(response.statusCode).to.be.equal(200);
     expect(response.body.status).to.be.equal(message.success);
     expect(response.body.data.category.name).to.be.equal(data.categoryName);
-    expect(response.body.data.category.description).to.be.equal(data.categoryDesc);
+    expect(response.body.data.category.description).to.be.equal(
+      data.categoryDesc
+    );
     expect(response.body).to.be.jsonSchema({
       $schema: "http://json-schema.org/draft-06/schema#",
       $ref: "#/definitions/Welcome1",
@@ -88,7 +104,16 @@ describe("TS Categories", () => {
   });
 
   it("TC update category", async () => {
-    const response = await new categories().updateCategories(token, categoryId,
+    allure.description("This is an put request for the module categories");
+    allure.severity(data.severityNormal);
+    allure.epic(data.epicProduct);
+    allure.feature(data.featurCategories);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagCategories);
+    allure.addLabel("tag", data.serviceAPI);
+    const response = await new categories().updateCategories(
+      token,
+      categoryId,
       {
         name: data.categoryUpdate,
         description: data.categoryDesc,
@@ -100,6 +125,13 @@ describe("TS Categories", () => {
   });
 
   it("TC delete category", async () => {
+    allure.description("This is an put request for the module categories");
+    allure.severity(data.severityMinor);
+    allure.epic(data.epicProduct);
+    allure.feature(data.featurCategories);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagCategories);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new categories().deleteCategories(token, categoryId);
     expect(response.statusCode).to.be.equal(200);
     expect(response.body.status).to.be.equal(message.success);

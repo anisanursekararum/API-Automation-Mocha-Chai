@@ -79,6 +79,13 @@ describe("TS Products", () => {
   });
 
   it("TC successfully add sale", async () => {
+    allure.description("This is an post request for the module transactions sale");
+    allure.severity(data.severityCritical);
+    allure.epic(data.epicPurchasing);
+    allure.feature(data.featurTransaction);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagTransaction);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new transactions().addSale(token, {
       officeId: data.officeId,
       customerId: customerId,
@@ -102,6 +109,13 @@ describe("TS Products", () => {
   });
 
   it("TC successfully get sale", async () => {
+    allure.description("This is an get request for the module transactions sale");
+    allure.severity(data.severityCritical);
+    allure.epic(data.epicPurchasing);
+    allure.feature(data.featurTransaction);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagTransaction);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new transactions().getSale(token, saleId);
     expect(response.statusCode).to.be.equal(200);
     expect(response.body.status).to.be.equal(message.success);
@@ -115,6 +129,13 @@ describe("TS Products", () => {
   });
 
   it("TC successfully add purchase", async () => {
+    allure.description("This is an post request for the module transactions purchase");
+    allure.severity(data.severityCritical);
+    allure.epic(data.epicPurchasing);
+    allure.feature(data.featurTransaction);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagTransaction);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new transactions().addPurchase(token, {
       officeId: data.officeId,
       date: formattedDate,
@@ -137,6 +158,13 @@ describe("TS Products", () => {
   });
 
   it("TC successfully get purchase", async () => {
+    allure.description("This is an get request for the module transactions purchase");
+    allure.severity(data.severityCritical);
+    allure.epic(data.epicPurchasing);
+    allure.feature(data.featurTransaction);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagTransaction);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new transactions().getPurchase(token, purchaseId);
     expect(response.statusCode).to.be.equal(200);
     expect(response.body.status).to.be.equal(message.success);

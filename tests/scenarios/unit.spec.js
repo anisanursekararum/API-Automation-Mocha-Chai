@@ -21,6 +21,13 @@ describe("TS Unit", () => {
   });
 
   it("TC successfully add unit", async () => {
+    allure.description("This is an post request for the module unit");
+    allure.severity(data.severityCritical);
+    allure.epic(data.epicProduct);
+    allure.feature(data.featureUnit);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagUnit);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new unit().addUnit(token, {
       name: data.unitName,
       description: data.unitDesc,
@@ -33,6 +40,13 @@ describe("TS Unit", () => {
   });
 
   it("TC get detail unit", async () => {
+    allure.description("This is an get request for the module unit");
+    allure.severity(data.severityCritical);
+    allure.epic(data.epicProduct);
+    allure.feature(data.featureUnit);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagUnit);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new unit().getUnit(token, unitId);
     expect(response.statusCode).to.be.equal(200);
     expect(response.body.status).to.be.equal(message.success);
@@ -86,6 +100,13 @@ describe("TS Unit", () => {
   });
 
   it("TC update unit", async () => {
+    allure.description("This is an put request for the module unit");
+    allure.severity(data.severityCritical);
+    allure.epic(data.epicProduct);
+    allure.feature(data.featureUnit);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagUnit);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new unit().updateUnit(token, unitId, {
       name: data.unitUpdate,
       description: data.unitDescUpdate,
@@ -96,6 +117,13 @@ describe("TS Unit", () => {
   });
 
   it("TC delete unit", async () => {
+    allure.description("This is an delete request for the module unit");
+    allure.severity(data.severityCritical);
+    allure.epic(data.epicProduct);
+    allure.feature(data.featureUnit);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagUnit);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new unit().deleteUnit(token, unitId);
     expect(response.statusCode).to.be.equal(200);
     expect(response.body.status).to.be.equal(message.success);

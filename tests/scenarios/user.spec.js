@@ -22,6 +22,13 @@ describe("TS User", () => {
   });
 
   it("TC successfully add user", async () => {
+    allure.description("This is an post request for the module user");
+    allure.severity(data.severityBlocker);
+    allure.epic(data.epicCredentials);
+    allure.feature(data.featurUser);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagUser);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new user().addUser(token, {
       name: "user" + uniqueSeed,
       email: uniqueSeed + "user@gmail.com",
@@ -34,6 +41,13 @@ describe("TS User", () => {
   });
 
   it("TC get detail user", async () => {
+    allure.description("This is an get request for the module user");
+    allure.severity(data.severityBlocker);
+    allure.epic(data.epicCredentials);
+    allure.feature(data.featurUser);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagUser);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new user().getUser(token, userId);
     expect(response.statusCode).to.be.equal(200);
     expect(response.body).to.be.jsonSchema({
@@ -91,6 +105,13 @@ describe("TS User", () => {
   });
 
   it("TC update user", async () => {
+    allure.description("This is an put request for the module user");
+    allure.severity(data.severityBlocker);
+    allure.epic(data.epicCredentials);
+    allure.feature(data.featurUser);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagUser);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new user().updateUser(token, userId, {
       name: data.nameUpdate,
       email: uniqueSeed + "userUpdate@gmail.com",
@@ -102,6 +123,13 @@ describe("TS User", () => {
   });
 
   it("TC delete user", async () => {
+    allure.description("This is an delete request for the module user");
+    allure.severity(data.severityBlocker);
+    allure.epic(data.epicCredentials);
+    allure.feature(data.featurUser);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagUser);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new user().deleteUser(token, userId);
     expect(response.statusCode).to.be.equal(200);
     expect(response.body.status).to.be.equal(message.success);

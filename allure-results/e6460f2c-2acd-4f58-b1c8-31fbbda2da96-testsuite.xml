@@ -1,0 +1,75 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1697527681718' stop='1697527686732'>
+    <name>TS Products</name>
+    <title>TS Products</title>
+    <test-cases>
+        <test-case start='1697527684377' status='passed' stop='1697527684887'>
+            <name>TC successfully add sale</name>
+            <title>TC successfully add sale</title>
+            <labels>
+                <label name='severity' value='Critical'/>
+                <label name='epic' value='Epic Purchasing'/>
+                <label name='feature' value='Transaction Modules'/>
+                <label name='tag' value='transaction'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an post request for the module transactions sale</description>
+        </test-case>
+        <test-case start='1697527684887' status='passed' stop='1697527685501'>
+            <name>TC successfully get sale</name>
+            <title>TC successfully get sale</title>
+            <labels>
+                <label name='severity' value='Critical'/>
+                <label name='epic' value='Epic Purchasing'/>
+                <label name='feature' value='Transaction Modules'/>
+                <label name='tag' value='transaction'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an get request for the module transactions sale</description>
+        </test-case>
+        <test-case start='1697527685501' status='passed' stop='1697527686118'>
+            <name>TC successfully add purchase</name>
+            <title>TC successfully add purchase</title>
+            <labels>
+                <label name='severity' value='Critical'/>
+                <label name='epic' value='Epic Purchasing'/>
+                <label name='feature' value='Transaction Modules'/>
+                <label name='tag' value='transaction'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an post request for the module transactions purchase</description>
+        </test-case>
+        <test-case start='1697527686118' status='passed' stop='1697527686732'>
+            <name>TC successfully get purchase</name>
+            <title>TC successfully get purchase</title>
+            <labels>
+                <label name='severity' value='Critical'/>
+                <label name='epic' value='Epic Purchasing'/>
+                <label name='feature' value='Transaction Modules'/>
+                <label name='tag' value='transaction'/>
+                <label name='tag' value='Web Service API'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='Owner' value='Minjeong Kim'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <description type='text'>This is an get request for the module transactions purchase</description>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

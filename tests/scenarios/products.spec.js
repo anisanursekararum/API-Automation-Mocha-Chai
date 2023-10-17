@@ -33,6 +33,13 @@ describe("TS Products", () => {
   });
 
   it("TC successfully add product", async () => {
+    allure.description("This is an post request for the module products");
+    allure.severity(data.severityBlocker);
+    allure.epic(data.epicProduct);
+    allure.feature(data.featurProducts);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagProducts);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new products().addProduct(token, {
       category_id: categoryId,
       code: uniqueSeed,
@@ -49,6 +56,13 @@ describe("TS Products", () => {
   });
 
   it("TC get detail product", async () => {
+    allure.description("This is an get request for the module products");
+    allure.severity(data.severityBlocker);
+    allure.epic(data.epicProduct);
+    allure.feature(data.featurProducts);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagProducts);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new products().getProduct(token, productId);
     const price = response.body.data.product.price.toString();
     const cost = response.body.data.product.cost.toString();
@@ -140,6 +154,13 @@ describe("TS Products", () => {
   });
 
   it("TC update product", async () => {
+    allure.description("This is an put request for the module products");
+    allure.severity(data.severityBlocker);
+    allure.epic(data.epicProduct);
+    allure.feature(data.featurProducts);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagProducts);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new products().updateProduct(token, productId, {
       category_id: data.productCategoryID,
       code: uniqueSeed,
@@ -155,6 +176,13 @@ describe("TS Products", () => {
   });
 
   it("TC delete product", async () => {
+    allure.description("This is an delete request for the module products");
+    allure.severity(data.severityBlocker);
+    allure.epic(data.epicProduct);
+    allure.feature(data.featurProducts);
+    allure.addArgument("Owner", data.owner);
+    allure.addLabel("tag", data.tagProducts);
+    allure.addLabel("tag", data.serviceAPI);
     const response = await new products().deleteProduct(token, productId);
     expect(response.statusCode).to.be.equal(200);
     expect(response.body.status).to.be.equal(message.success);
